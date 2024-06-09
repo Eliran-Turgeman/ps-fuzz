@@ -44,6 +44,7 @@ Table of Contents
     * [Package page](https://pypi.org/project/prompt-security-fuzzer/)
     * [:construction: Using docker](#docker) ***coming soon*** 
 * [Usage](#usage)
+    * [Features](#features)
     * [Environment variables](#environment-variables)
     * [Supported LLMs](#llm-providers)
     * [Command line options](#options)
@@ -73,16 +74,6 @@ Table of Contents
 
 <br>
 
----
-
-<a id="features"></a>
-#### Features
-* :moneybag:  We support 20 [llm providers](#llm-providers)
-* :skull_and_crossbones:  Supports 20 different [attacks](#attacks)
-
----
-<br>
-
 <a id="installation"></a>
 ## 🚀 Installation 
 ![prompt-fuzzer-install-final](https://github.com/prompt-security/ps-fuzz/assets/163823698/47daaeed-3fad-417e-b646-06753db427f4)
@@ -99,17 +90,31 @@ Table of Contents
 
    Or grab latest release wheel file form [releases](https://github.com/prompt-security/ps-fuzz/releases)
 
+2. Launch the Fuzzer
+   ```zsh
+   export OPENAI_API_KEY=sk-123XXXXXXXXXXXX
+   
+   prompt-security-fuzzer
+   ```
 
-2. Input your system prompt
+3. Input your system prompt
 
-3. Start testing
+4. Start testing
 
-4. Test yourself with the Playground! Iterate as many times are you like until your system prompt is secure.
+5. Test yourself with the Playground! Iterate as many times are you like until your system prompt is secure.
 
 
 <a id="usage"></a>
 ## :computer:  Usage
-
+<a id="features"></a>
+### Features
+<b>The Prompt Fuzzer Supports:</b><br>
+🧞  16 [llm providers](#llm-providers)<br>
+🔫  15 different [attacks](#attacks)<br>
+💬  Interactive mode<br>
+🤖  CLI mode<br>
+🧵  Multi threaded testing<br>
+  
 <a id="environment-variables"></a>
 ### Environment variables:
 
@@ -125,7 +130,7 @@ Alternatively, create a file named `.env` in the current directory and set the `
 
 | ENVIORMENT KEY| Description |
 |---------------|-------------|
-| `ANTHROPIC_API_KEY` | `Anthropic c`hat large language models.|
+| `ANTHROPIC_API_KEY` | `Anthropic` Chat large language models.|
 | `ANYSCALE_API_KEY` |  `Anyscale` Chat large language models.|
 | `AZURE OPENAI_API_KEY` | `Azure OpenAI` Chat Completion API.|
 | `BAICHUAN_API_KEY` |  `Baichuan chat` models API by Baichuan Intelligent Technology.|
@@ -226,6 +231,13 @@ We use a dynamic testing approach, where we get the necessary context from your 
 
 - **System Prompt Stealer**: Attempts to extract the LLM's internal configuration or sensitive information.
 
+##### Definitions
+
+- **Broken**: Attack type attempts that LLM succumbed to.
+- **Resilient**: Attack type attempts that LLM resisted.
+- **Errors**: Attack type attempts that had inconclusive results.
+
+
 
 <br/>
 <br/>
@@ -233,10 +245,13 @@ We use a dynamic testing approach, where we get the necessary context from your 
 <a id="roadmap"></a>
 ## :rainbow: What’s next on the roadmap?
 
-- [ ]  We’ll continuously add more attack types to ensure your GenAI apps stay ahead of the latest threats
-- [ ]  We’ll continue evolving the reporting capabilities to enrich insights and add smart recommendations on how to harden the system prompt
-- [ ]  We’ll be adding a Google Colab Notebook for added easy testing
-- [ ]  Turn this into a community project! We want this to be useful to everyone building GenAI applications. If you have attacks of your own that you think should be a part of this project, please contribute! This is how: https://github.com/prompt-security/ps-fuzz/blob/main/CONTRIBUTING.md
+- [ ]  Google Colab Notebook
+- [ ]  More attack types
+- [ ]  Adjust the output evaluation mechanism for prompt dataset testing
+- [ ]  Better reporting capabilites
+- [ ]  Hardening recommendations
+
+Turn this into a community project! We want this to be useful to everyone building GenAI applications. If you have attacks of your own that you think should be a part of this project, please contribute! This is how: https://github.com/prompt-security/ps-fuzz/blob/main/CONTRIBUTING.md
 
 <a id="contributing"></a>
 ## 🍻 Contributing
